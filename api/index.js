@@ -30,3 +30,17 @@ app.use("/api/user", userRoutes);
 
 // Path : api/auth
 app.use("/api/auth",authRoute);
+
+
+//MIDDLEWARE
+app.use((err, req, res, next)=>{
+    // 500 is actually internal server error
+    const statusCode = err.statusCode || 500;
+    const message = err.message || 'Internal Server Error';
+    return res.status(statusCode).json({
+        success : false,
+        message : message,
+    //If key and value have the same name, then we can represent the same as given below
+        statusCode
+    });
+});
