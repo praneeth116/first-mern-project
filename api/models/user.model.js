@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { type } from "os";
 
 //Defining user schemas for username, password and email.
 const userSchema = new mongoose.Schema(
@@ -20,7 +21,7 @@ const userSchema = new mongoose.Schema(
     }, {timestamps: true}
 )
 
-//Name of the model must be uppercase
+//Name of the model must be uppercase.
 const User = mongoose.model('User', userSchema);
 
 export default User;

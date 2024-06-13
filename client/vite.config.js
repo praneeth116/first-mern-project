@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 
 // https://vitejs.dev/config/
+// Added proxy
 export default defineConfig({
   plugins: [react()],
   server:{

@@ -3,8 +3,9 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRoutes from "./routes/user.route.js";
 import authRoute from "./routes/auth.route.js";
+import heroRoute from "./routes/hero.route.js"
 
-dotenv.config()
+dotenv.config();
 
 mongoose
 .connect(process.env.MONGO)
@@ -31,6 +32,7 @@ app.use("/api/user", userRoutes);
 // Path : api/auth
 app.use("/api/auth",authRoute);
 
+app.use("/api/hero", heroRoute);
 
 //MIDDLEWARE
 app.use((err, req, res, next)=>{

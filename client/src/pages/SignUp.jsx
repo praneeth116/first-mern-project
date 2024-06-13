@@ -70,7 +70,7 @@ function SignUp() {
       <div className='flex gap-2 mt-4'>
         <p>Have an account?</p>
         <Link to="/sign-in">
-          <span className='font-semibold'>Sign in</span>
+          <span className='font-semibold hover:underline'>Sign in</span>
         </Link>
       </div>
       <p className='text-red-700 mt-5'>{error && 'Something went wrong!'}</p>
