@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import userRoutes from "./routes/user.route.js";
 import authRoute from "./routes/auth.route.js";
 import heroRoute from "./routes/hero.route.js"
-
+import cookieParser from 'cookie-parser';
 dotenv.config();
 
 mongoose
@@ -19,12 +19,14 @@ mongoose
 const app = express();
 
 //By default we can't send json as input to backend. This allows input as json
-app.use(express.json())
+app.use(express.json());
+
+//Now we are able to pass cookies to our application
+app.use(cookieParser());
 
 app.listen(3000, ()=>{
     console.log("Server listening on port 3000");
 });
-
 
 // Path : api/user
 app.use("/api/user", userRoutes);
